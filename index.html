@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Page is a personal site for a student exploring web interfaces and AI systems.">
+  <title>My Page | Web and AI Student</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="My Page home">
+        <span class="brand-mark" aria-hidden="true">MP</span>
+        <span>My Page</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" data-nav-menu>
+        <li><a class="nav-link is-active" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home" data-section>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Student / Web / AI</p>
+        <h1>My Page</h1>
+        <p class="hero-copy">A student exploring web interfaces, AI systems, and small experiments that turn learning into shipped work.</p>
+        <div class="hero-actions" aria-label="Hero actions">
+          <a class="button primary" href="#about">Read about me</a>
+          <a class="button secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <aside class="lab-panel" aria-label="Learning console">
+        <div class="panel-header">
+          <span class="panel-dot dot-cyan"></span>
+          <span class="panel-dot dot-violet"></span>
+          <span class="panel-dot dot-blue"></span>
+          <span class="panel-title">learning-console</span>
+        </div>
+        <div class="console-lines" data-console-lines>
+          <p><span>&gt;</span> loading focus: web interfaces</p>
+          <p><span>&gt;</span> testing idea: AI-assisted tools</p>
+          <p><span>&gt;</span> logging progress: learning in public</p>
+          <p><span>&gt;</span> status: building the next experiment</p>
+        </div>
+        <div class="signal-card">
+          <span class="signal-label">current mode</span>
+          <strong>Build. Learn. Iterate.</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section about" id="about" data-section>
+      <div class="section-label">About</div>
+      <div class="section-layout">
+        <div>
+          <h2>Learning web foundations while exploring how AI changes the way people build.</h2>
+        </div>
+        <div class="copy-stack">
+          <p>I am a student focused on web development and AI. This page is a compact space for my learning path, practical skills, and contact links while I keep building projects and experiments.</p>
+          <p>I care about clean interfaces, useful automation, and turning technical curiosity into things that can be opened, tested, and improved.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" data-section>
+      <div class="section-label">Skills</div>
+      <div class="section-heading">
+        <h2>Tools and concepts I am building with.</h2>
+        <p>The list is intentionally focused for a first version: core web skills, AI fundamentals, and the workflow needed to publish work.</p>
+      </div>
+
+      <div class="skill-grid" aria-label="Skill groups">
+        <article class="skill-card">
+          <div class="skill-index">01</div>
+          <h3>Web</h3>
+          <ul>
+            <li>HTML structure</li>
+            <li>CSS layouts</li>
+            <li>JavaScript interactions</li>
+            <li>Responsive UI</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">02</div>
+          <h3>AI</h3>
+          <ul>
+            <li>AI fundamentals</li>
+            <li>Prompting</li>
+            <li>AI-assisted workflows</li>
+            <li>Experiment design</li>
+          </ul>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-index">03</div>
+          <h3>Workflow</h3>
+          <ul>
+            <li>Git and GitHub</li>
+            <li>Static deployment</li>
+            <li>Debugging basics</li>
+            <li>Documentation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" data-section>
+      <div class="section-label">Contact</div>
+      <div class="contact-panel">
+        <div>
+          <h2>Open to learning, collaboration, and project feedback.</h2>
+          <p>These starter links are ready to replace with your real profiles when you want to publish the page.</p>
+        </div>
+        <div class="contact-links" aria-label="Social links">
+          <a href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:you@example.com">Email</a>
+          <a href="https://www.instagram.com/your-username" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>My Page. Built with static HTML, CSS, and JavaScript.</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
