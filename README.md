@@ -41,7 +41,7 @@ The Repos section can display public GitHub repositories with no extra dependenc
 To enable it:
 
 1. Open `script.js`.
-2. Change `GITHUB_USERNAME` from `your-username` to your real GitHub username.
+2. `GITHUB_USERNAME` is currently set to `BrandonSjt`. Change it only if your GitHub username changes.
 3. Open the page through a local server or GitHub Pages so the browser can request the GitHub API.
 
 Only public repositories are displayed. No token is required for the first version.
@@ -50,7 +50,7 @@ Only public repositories are displayed. No token is required for the first versi
 
 Replace the starter contact URLs in `index.html`:
 
-- `https://github.com/your-username`
+- `https://github.com/BrandonSjt`
 - `https://www.linkedin.com/in/your-username`
 - `mailto:you@example.com`
 - `https://www.instagram.com/your-username`

@@ -7,7 +7,8 @@ const consoleLines = document.querySelector('[data-console-lines]');
 const repoList = document.querySelector('[data-repo-list]');
 const githubProfileLink = document.querySelector('[data-github-profile]');
 
-const GITHUB_USERNAME = 'your-username';
+const GITHUB_USERNAME = 'BrandonSjt';
+const GITHUB_USERNAME_PLACEHOLDER = 'your-username';
 
 const closeMenu = () => {
   document.body.classList.remove('nav-open');
@@ -119,10 +120,10 @@ const loadGitHubRepositories = async () => {
   if (!repoList) return;
 
   const username = GITHUB_USERNAME.trim();
-  const isConfigured = username && username !== 'your-username';
+  const isConfigured = username && username !== GITHUB_USERNAME_PLACEHOLDER;
 
   if (!isConfigured) {
-    renderRepoMessage('Add your GitHub username', 'Update GITHUB_USERNAME in script.js to show public repositories here.');
+    renderRepoMessage('Add your GitHub username', 'Set GITHUB_USERNAME in script.js to show public repositories here.');
     return;
   }
 
