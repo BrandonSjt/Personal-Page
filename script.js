@@ -4,6 +4,10 @@ const navMenu = document.querySelector('[data-nav-menu]');
 const navLinks = Array.from(document.querySelectorAll('.nav-link'));
 const sections = Array.from(document.querySelectorAll('[data-section]'));
 const consoleLines = document.querySelector('[data-console-lines]');
+const repoList = document.querySelector('[data-repo-list]');
+const githubProfileLink = document.querySelector('[data-github-profile]');
+
+const GITHUB_USERNAME = 'your-username';
 
 const closeMenu = () => {
   document.body.classList.remove('nav-open');
@@ -69,3 +73,88 @@ if (consoleLines && !reduceMotion) {
     index += 1;
   }, 3200);
 }
+const escapeHTML = (value = '') => String(value).replace(/[&<>"]/g, (char) => ({
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;'
+}[char]));
+
+const renderRepoMessage = (title, message) => {
+  if (!repoList) return;
+
+  repoList.innerHTML = `
+    <article class="repo-card repo-card-empty">
+      <span class="repo-status">Setup needed</span>
+      <h3>${escapeHTML(title)}</h3>
+      <p>${escapeHTML(message)}</p>
+    </article>
+  `;
+};
+
+const renderRepositories = (repositories) => {
+  if (!repoList) return;
+
+  repoList.innerHTML = repositories.map((repo) => {
+    const description = repo.description || 'No description yet.';
+    const language = repo.language || 'Code';
+
+    return `
+      <article class="repo-card">
+        <span class="repo-status">Updated ${new Date(repo.updated_at).getFullYear()}</span>
+        <h3>${escapeHTML(repo.name)}</h3>
+        <p>${escapeHTML(description)}</p>
+        <div class="repo-meta" aria-label="Repository metadata">
+          <span>${escapeHTML(language)}</span>
+          <span>${repo.stargazers_count} stars</span>
+          <span>${repo.forks_count} forks</span>
+        </div>
+        <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">View repository</a>
+      </article>
+    `;
+  }).join('');
+};
+
+const loadGitHubRepositories = async () => {
+  if (!repoList) return;
+
+  const username = GITHUB_USERNAME.trim();
+  const isConfigured = username && username !== 'your-username';
+
+  if (!isConfigured) {
+    renderRepoMessage('Add your GitHub username', 'Update GITHUB_USERNAME in script.js to show public repositories here.');
+    return;
+  }
+
+  if (githubProfileLink) {
+    githubProfileLink.href = `https://github.com/${encodeURIComponent(username)}`;
+  }
+
+  try {
+    repoList.setAttribute('aria-busy', 'true');
+    const response = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=12`);
+
+    if (!response.ok) {
+      throw new Error('GitHub request failed');
+    }
+
+    const repositories = await response.json();
+    const visibleRepos = repositories
+      .filter((repo) => !repo.fork)
+      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+      .slice(0, 6);
+
+    if (visibleRepos.length === 0) {
+      renderRepoMessage('No public repositories found', 'Public repositories will appear here after they are available on GitHub.');
+      return;
+    }
+
+    renderRepositories(visibleRepos);
+  } catch (error) {
+    renderRepoMessage('GitHub repos unavailable', 'Check the GitHub username in script.js or try again when the browser has internet access.');
+  } finally {
+    repoList.removeAttribute('aria-busy');
+  }
+};
+
+loadGitHubRepositories();
