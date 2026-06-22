@@ -7,6 +7,7 @@ A single-page personal website for a student focused on web interfaces and AI sy
 - `index.html` - page structure and content
 - `styles.css` - Dark AI lab visual design and responsive layout
 - `script.js` - navigation and small interactive effects
+- `assets/profile-photo.svg` - starter profile image placeholder
 - `docs/superpowers/specs/2026-06-21-personal-page-design.md` - approved design spec
 
 ## Local Preview
@@ -22,6 +23,16 @@ Then open:
 ```text
 http://localhost:8000
 ```
+
+## Profile Photo
+
+The page currently uses `assets/profile-photo.svg` as a starter profile image for Brandon Deandra.
+
+To use a real photo:
+
+1. Add your photo to the `assets` folder.
+2. Use a square image if possible, for example `profile-photo.jpg` or `profile-photo.png`.
+3. Update the `src` in `index.html` from `assets/profile-photo.svg` to your photo file.
 
 ## Customize Before Publishing
 

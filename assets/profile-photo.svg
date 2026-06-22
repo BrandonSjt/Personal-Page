@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Brandon Deandra profile placeholder</title>
+  <desc id="desc">A dark AI lab style placeholder with the initials BD.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07101f"/>
+      <stop offset="0.55" stop-color="#11193a"/>
+      <stop offset="1" stop-color="#050711"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="50%">
+      <stop offset="0" stop-color="#47f0ff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#47f0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect width="1200" height="1200" fill="url(#glow)"/>
+  <g stroke="#47f0ff" stroke-opacity="0.14" stroke-width="2">
+    <path d="M0 180h1200M0 360h1200M0 540h1200M0 720h1200M0 900h1200M0 1080h1200"/>
+    <path d="M180 0v1200M360 0v1200M540 0v1200M720 0v1200M900 0v1200M1080 0v1200"/>
+  </g>
+  <circle cx="600" cy="600" r="320" fill="none" stroke="#9b7cff" stroke-opacity="0.36" stroke-width="6"/>
+  <circle cx="600" cy="600" r="420" fill="none" stroke="#47f0ff" stroke-opacity="0.22" stroke-width="3"/>
+  <text x="600" y="650" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="220" font-weight="800" fill="#eef4ff" letter-spacing="-10">BD</text>
+  <text x="600" y="760" text-anchor="middle" font-family="Consolas, monospace" font-size="34" fill="#47f0ff" letter-spacing="8">PROFILE PHOTO</text>
+</svg>
